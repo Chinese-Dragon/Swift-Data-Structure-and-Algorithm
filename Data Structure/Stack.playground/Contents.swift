@@ -33,8 +33,8 @@ protocol Stack {
  ---------------------------------------------------
  e.g
  struct Stk {
- private var array: [String] = []
- var name: String
+    private var array: [String] = []
+    var name: String
  }
  There is no default initializer because not all stored property have default values. Memeberwise initializer is only accessable from inside because var array is private
  -------------------------------------------------------
@@ -92,5 +92,3 @@ stack.push(0.99)
 stack.push([1,2,3,4])
 
 print(stack.description)
-
-

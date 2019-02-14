@@ -16,7 +16,7 @@ protocol Deque {
 /**
     https://github.com/raywenderlich/swift-algorithm-club/tree/master/Deque
 
-    Deque: Double ended queue which supports enqueue dequeue from front and back. When dequeue or enqueue from front, to prevent array auto shifting and keep O(1), we need to implement efficient resizing logic to the front same as swift internal implement for the back.
+    Deque: Double ended queue which supports enqueue dequeue from front and back. When dequeue or enqueue from front, to prevent array auto shifting and keep average O(1), we need to implement efficient resizing logic to the front same as swift internal implement for the back.
  */
 struct DequeArrayImp<T>: Deque {
   typealias anyType = T
