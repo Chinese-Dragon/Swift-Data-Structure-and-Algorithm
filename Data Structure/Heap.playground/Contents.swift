@@ -205,10 +205,3 @@ extension Heap where T: Equatable {
     }
     
 }
-
-
-var heap = Heap(array: [10,14,25,33,101,82,99], sort: <)
-
-print(heap.remove(at: 2))
-
-var s = Set<Character>()
