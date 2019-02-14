@@ -1,5 +1,48 @@
-import UIKit
+import Foundation
 
+/**
+ https://stackoverflow.com/questions/14756648/difference-between-complete-binary-tree-and-balanced-binary-tree
+ https://stackoverflow.com/questions/8015630/definition-of-a-balanced-tree
+ 
+ Balanced binary tree: The binary tree where the depth of the two subtrees of every node never differ by more than 1.
+ 
+ Complete binary tree: The binary tree whose all levels except the last level are completely filled and all the leaves in the last level are all to the left side.
+ 
+ --------------------------------------------------------------------------------------------------
+ 
+ Balanced:
+     The constraint is generally applied recursively to every subtree. That is, the tree is only balanced if:
+ 
+     The left and right subtrees' heights differ by at most one, AND
+     The left subtree is balanced, AND
+     The right subtree is balanced
+ 
+ 
+     According to this, the next tree is balanced:
+ 
+           A
+         /   \
+        B     C
+       /     / \
+      D     E   F
+           /
+          G
+ 
+ 
+    The next one is not balanced because the subtrees of C differ by 2 in their height:
+ 
+          A
+        /   \
+       B     C   <-- difference = 2
+      /     /
+     D     E
+          /
+         G
+ 
+     That said, the specific constraint of the first point depends on the type of tree. The one listed above is the typical for AVL trees.
+ 
+     Red-black trees, for instance, impose a softer constraint.
+ */
 struct Heap<T> {
     private var nodes: [T] = []
     
@@ -205,3 +248,5 @@ extension Heap where T: Equatable {
     }
     
 }
+
+var a = Heap<Int>(sort: <)
