@@ -2,7 +2,6 @@ import Foundation
 
 protocol Deque {
   associatedtype anyType
-  var items: [anyType?] { get }
   var isEmpty: Bool { get }
   var count: Int { get }
   var front: anyType? { get }
@@ -21,7 +20,7 @@ protocol Deque {
 struct DequeArrayImp<T>: Deque {
   typealias anyType = T
 
-  private(set) var items: [T?]
+  private var items: [T?]
   private var head: Int
   private var emptySpaceCapacity: Int
   private var originalCapacity: Int
@@ -125,9 +124,9 @@ dq.enqueue(1)
 dq.enqueue("Appppple")
 dq.enqueueFront("lemon")
 
-print(dq.items)
+print(dq.front)
 
 _ = dq.dequeue()
 _ = dq.dequeueBack()
 
-print(dq.items)
+print(dq.back)

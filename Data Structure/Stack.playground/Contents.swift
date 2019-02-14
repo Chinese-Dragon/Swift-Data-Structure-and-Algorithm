@@ -19,7 +19,6 @@ func addressHeap<T: AnyObject>(o: T) -> Int {
 **/
 protocol Stack {
   associatedtype anyType
-  var items: [anyType] { get }
   var isEmpty: Bool { get }
   var count: Int { get }
   var top: anyType? { get }
@@ -47,7 +46,7 @@ struct StackArrayImp<T>: Stack {
    we can not have property as private in protocol. If we want the property to be private in implemetation, we can only define as private set but
    internal get
   **/
-  private(set) var items: [T]
+  private var items: [T]
   
   init() {
     self.items = []

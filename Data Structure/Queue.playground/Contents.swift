@@ -2,7 +2,6 @@ import Foundation
 
 protocol Queue {
   associatedtype anyType
-  var items: [anyType?] { get }
   var isEmpty: Bool { get }
   var count: Int { get }
   var front: anyType? { get }
@@ -13,7 +12,7 @@ protocol Queue {
 // https://github.com/raywenderlich/swift-algorithm-club/tree/master/Queue
 struct QueueArrayImp<T>: Queue {
   private var head = 0
-  private(set) var items: [T?] = []
+  private var items: [T?] = []
   
   var count: Int {
     return items.count - head
