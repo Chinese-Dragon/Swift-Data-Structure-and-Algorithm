@@ -20,16 +20,16 @@ func partition<T: Comparable>(nums: inout [T], start: Int, end: Int) -> Int {
   
   for i in start..<end {
     if nums[i] <= pivot {
-      (nums[tempPivotIndex], nums[i]) = (nums[i], nums[tempPivotIndex])
+      nums.swapAt(tempPivotIndex, i)
       tempPivotIndex += 1
     }
   }
-  (nums[tempPivotIndex], nums[end]) = (nums[end], nums[tempPivotIndex])
+  nums.swapAt(tempPivotIndex, end)
   
   return tempPivotIndex
 }
 
-var input = [4,3,2,1]
+var input = [1,2,3,-2,-1,99,20]
 
 quickSort(nums: &input)
 
