@@ -35,3 +35,4 @@ graph.addDirectedEdge(v3, to: v4, withWeight: 4.5)
 graph.addDirectedEdge(v4, to: v1, withWeight: 2.8)
 
 print(graph.description)
+
